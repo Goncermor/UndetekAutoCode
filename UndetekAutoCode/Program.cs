@@ -7,7 +7,6 @@ class Program
     private const string CODE_URL = "https://icheat.io/files/ic/getpin-53478634576234987435.php";
     private const string FILE_URL = "https://icheat.io/files/download.php";
 
-
     private static HttpClient hClient = new HttpClient();
 
     public static void Main()
@@ -25,7 +24,7 @@ class Program
         if (CSprocess == null)
         {
             FancyWriteLine("Counter-Strike 2 Process not found. Exiting...", "ERROR", ConsoleColor.Magenta);
-            Thread.Sleep(3000);
+            Thread.Sleep(1500);
             return;
         }
 #endif
@@ -71,7 +70,7 @@ class Program
         FancyWriteLine("Waiting for injection.", "PROCESS", ConsoleColor.Magenta);
         UndetekProcess.WaitForExit();
         FancyWriteLine("Injection completed sucessfully. Exiting...", "SUCCESS", ConsoleColor.Green);
-        Thread.Sleep(3000);
+        Thread.Sleep(1500);
 
 #if !DEBUG
         // Focus CSGO 2 Window
@@ -119,10 +118,8 @@ class Program
         return true;
     }
 
-
     public static void FancyWriteLine(string data, string label, ConsoleColor labelColor) // Write logs to the console in a fancy way
     {
-
         Console.Write(" [");
         Console.ForegroundColor = labelColor;
         Thread.Sleep(10);
