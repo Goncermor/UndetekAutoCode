@@ -72,8 +72,11 @@ class Program
         UndetekProcess.WaitForExit();
         FancyWriteLine("Injection completed sucessfully. Exiting...", "SUCCESS", ConsoleColor.Green);
         Thread.Sleep(3000);
+
+#if !DEBUG
         // Focus CSGO 2 Window
         ShowWindow(CSprocess.MainWindowHandle, 9);
+#endif
         return;
     }
 
